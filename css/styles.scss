@@ -1,0 +1,69 @@
+* {
+    font-family: Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.body {
+    display: flex;
+    justify-content: center;
+    background-color: #2B2B2B;
+}
+//Nav bar start//
+.outer {
+ width: 96%;
+ max-width: 1000px;
+ height: 100vh;
+ margin-top: 2vh;
+ background-color: white;
+}
+.inner {
+    background-color: #353A3F;
+    display:flex;
+    justify-content: center;
+}
+.navbar {
+    
+    display: flex;
+    justify-content: space-between;
+    width: 96%;
+    align-items: center;
+}
+//Navbar end//
+
+//List names start//
+.col-3 {
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+.add-list {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border: 1px solid #d4d4d4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+.create-list {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+}
+.add-button:hover {
+    cursor: pointer;
+}
+
+
+//List names end//
+//Task names start//
+//Task names end//
