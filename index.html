@@ -4,50 +4,91 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    
+    <title>ToDo App</title>
 </head>
 <body class="body">
     <div class="outer">
-      <!-- Navbar -->
-        <div class="inner">
-          <nav class="navbar">
-            <div>
-              <h1 class="logo">ListIt</h1>
+        <nav class="navbar">
+            <div class="navbar-inner">
+                <h1 class="logo">ListIt</h1>
+                <div class="filter-container">
+                    <div class="filter dropleft">
+                            <button class=" btn btn-left" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bi bi-list"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" onclick="removeCompleted()">Remove Completed Tasks</a>
+                              <a class="dropdown-item" onclick="removeList()">Delete List</a>
+                              <a class="dropdown-item" onclick="removeAll()">Delete All</a>
+                            </div>
+                        </div>
+                </div>
             </div>
-          </nav>
-       </div>
-       <!-- Lists names -->
-       <div class="container-fluid">
-        <div class="row">
-          <div class="p-0 col-3">
-            <div class="make-list">
-              <input type="text" id="list-name" class="list-name" placeholder="New list...">
-              <div class="add-list"><i class="bi bi-plus-lg"></i></div>
+        </nav>
+       
+        <div class="container-fluid">
+          <div class="row">
+            <!-- left side -->
+            <div class="p-0 col-3">
+              <!-- new list input -->
+              <div class="make-new-list">
+                <input type="text" id="new-list-name" class="new-list-name" placeholder="New List...">
+                <div class="add-new-list" onclick="addList()"><i class="bi bi-plus-lg" ></i></div>
+              </div>
+              <!-- list of lists go here -->
+               <div class='lists-list'id='lists-list'>
+                   <ul class="list-group">
+                       <li class="list-group-item">
+                            Sample... 
+                    </li>
+                   </ul>
+               </div>
             </div>
+       
+            <div class="col-9">
+              <!-- current todo list name goes here -->
+              <div class="inner">
+              <div id="current-list" class="current-list">Sample...</div>
+              <!-- current todo list goes here -->
+              <div class="task-list">
+                <div class="list-group-item">
+                    <ul class="list-group">    
+                        <li id="create-task" class="list-group-item create-task">
+                            <div id=new-task class="new-task">
+                                <div class="add-task" onclick="addTask()">
+                                    <i class="bi bi-plus-lg"></i>
+                                </div>
+                                <input type="text" id="new-task-name" class="new-task-name" placeholder="New Task..." >
+                            </div>
+                        </li>
+                        </ul>
+                        </div>
+                        <div class="list-group-item" id="current-list-todos">
+                        <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="todo">
+                                <div><input id="task-item-check" class='task-item-check' type='checkbox'>List your tasks...</div>
+                                <i class='bi bi-trash'></i>
+                            </div>
+                            
+                    
+                        </li>
+                        </ul>
 
-            <div id="lists-list" class="lists-list">
-              <!-- for later use in javascript -->
-              <!-- <ul class="list-group">
-                <li class="list-group-item"></li>
-              </ul> -->
+                        </div>
+              </div>
+              
             </div>
+       
           </div>
-     
-          <div class="col-9">
-            <!-- current todo list name goes here -->
-            <div class="list-title">
-            
-            </div>
-          </div>
-     
         </div>
-      </div>
- </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+       </div> 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="/app.js"></script>
 </body>
 </html>
